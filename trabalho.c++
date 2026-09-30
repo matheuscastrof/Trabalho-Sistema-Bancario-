@@ -55,7 +55,6 @@ int main() {
 
                 break;
             }
-
             do {
 
                 cout << "== Cadastrar de conta ==" << endl;
@@ -72,7 +71,6 @@ int main() {
 
             } while (numeroConta[quantidadeContas] <= 0);
 
-
             cout << "Digite o nome do Titular da Conta: ";
 
             // comando para pegar o nome completo
@@ -80,14 +78,11 @@ int main() {
 
             getline(cin, nomeCliente[quantidadeContas]);
 
-
             cout << "Digite o CPF: ";
 
             cin >> cpf[quantidadeContas];
 
-
             do {
-
                 cout << "---- Informe o tipo da conta ----" << endl;
                 cout << "1 - Conta corrente" << endl;
                 cout << "2 - Conta poupanca" << endl;
@@ -114,10 +109,7 @@ int main() {
                          << endl;
                 }
 
-            } while (tipoConta[quantidadeContas] != 1 &&
-                     tipoConta[quantidadeContas] != 2);
-
-
+            } while (tipoConta[quantidadeContas] != 1 && tipoConta[quantidadeContas] != 2);
             do {
 
                 cout << "Digite o saldo da conta R$ : ";
@@ -159,14 +151,14 @@ int main() {
                 int posicaoConta = -1;
 
                 for (int i = 0; i < quantidadeContas; i++) {
-
+                    //utilizaçao do for para achar a posiçao das contas 
                     if (numeroConta[i] == numeroConsulta) {
-
+                        
                         posicaoConta = i;
                         break;
                     }
                 }
-
+                // Se continuar -1, significa que o for passou por todas as contas e não encontrou o número procurado.
                 if (posicaoConta == -1) {
 
                     cout << "Conta nao encontrada!" << endl;
@@ -180,7 +172,7 @@ int main() {
                 cout << "Nome do titular: "
                      << nomeCliente[posicaoConta]
                      << endl;
-
+                //condiçao para saber qual tipo de conta é a conta cadastrada
                 if (tipoConta[posicaoConta] == 1) {
 
                     cout << "Tipo de Conta: Corrente"
@@ -480,26 +472,16 @@ int main() {
                     }
                 }
             }
-
             break;
-
-
         case 6:
-
             cout << "Saindo do sistema ..." << endl;
-
             break;
-
-
         default:
-
             cout << "Opcao invalida! digite um numero de 1 a 6"
                  << endl;
 
             break;
         }
-
     } while (opcao != 6);
-
     return 0;
 }
